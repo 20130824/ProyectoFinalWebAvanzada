@@ -92,20 +92,20 @@
 	<title>
 		<band height="73" splitType="Stretch">
 			<staticText>
-				<reportElement x="2" y="10" width="553" height="29" forecolor="#008080"/>
+				<reportElement x="2" y="10" width="553" height="29" forecolor="#003333"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Saleta's Marketplace]]></text>
+				<text><![CDATA[La Tienda de Monti y Darle]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="113" splitType="Stretch">
 			<rectangle>
-				<reportElement mode="Opaque" x="170" y="1" width="218" height="110" forecolor="#000000" backcolor="#ffffff"/>
+				<reportElement mode="Opaque" x="150" y="1" width="230" height="110" forecolor="#000000" backcolor="#ffffff"/>
 				<graphicElement>
-					<pen lineColor="#666666"/>
+					<pen lineColor="#003333"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
@@ -113,14 +113,14 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Nombre Cliente :]]></text>
+				<text><![CDATA[Cliente :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="174" y="49" width="93" height="20"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Numero Factura :]]></text>
+				<text><![CDATA[No Factura :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="174" y="71" width="93" height="20"/>
@@ -142,7 +142,7 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Correo Cliente :]]></text>
+				<text><![CDATA[Correo :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="263" y="93" width="160" height="20"/>
@@ -174,7 +174,7 @@
 	<columnHeader>
 		<band height="27" splitType="Stretch">
 			<rectangle>
-				<reportElement mode="Opaque" x="2" y="2" width="531" height="20" backcolor="#00cece"/>
+				<reportElement mode="Opaque" x="2" y="2" width="531" height="20" backcolor="#ffffff"/>
 				<graphicElement>
 					<pen lineColor="#666666"/>
 				</graphicElement>

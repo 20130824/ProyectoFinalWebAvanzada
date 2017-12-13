@@ -123,7 +123,7 @@ class ReportingController {
                 text "Se debe enviar un pedido a la siguiente direccion:\n" + factura.direccion
                 to enviar_a
                 from "saletasmarket@gmail.com"
-                attach "papazon.pdf", "application/pdf", pdfStream.toByteArray()
+                attach "reporte_despacho.pdf", "application/pdf", pdfStream.toByteArray()
             }
             render(file: pdfStream.toByteArray(), contentType: 'application/pdf')
             //render(file: pdfStream.toByteArray(), fileName: 'DownloadReport.pdf', contentType: 'application/pdf')

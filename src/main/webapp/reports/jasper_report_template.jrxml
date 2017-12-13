@@ -96,7 +96,7 @@
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Saleta's Marketplace]]></text>
+				<text><![CDATA[La tienda de monti y darle]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -113,21 +113,21 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Nombre Cliente :]]></text>
+				<text><![CDATA[Cliente :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="174" y="49" width="93" height="20"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Numero Factura :]]></text>
+				<text><![CDATA[No Factura :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="174" y="71" width="93" height="20"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Fecha Factura :]]></text>
+				<text><![CDATA[Fecha :]]></text>
 			</staticText>
 
 			<staticText>
@@ -142,7 +142,7 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Correo Cliente :]]></text>
+				<text><![CDATA[Correo :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="263" y="93" width="88" height="20"/>
