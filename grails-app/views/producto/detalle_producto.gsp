@@ -1,10 +1,10 @@
 <%@ page import="ProyectoFinalWeb.TipoUsuario" %>
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Tienda Something </title>
+    <title>Productos</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.png">
@@ -12,15 +12,6 @@
 
 </head>
 <body>
-
-<!-- PRELOADER -->
-<div id="preloader">
-    <div class="preloader-area">
-        <div class="preloader-box">
-            <div class="preloader"></div>
-        </div>
-    </div>
-</div>
 
 
 <section class="header-top-section">
@@ -92,7 +83,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Inicio</a></li>
+                    <li class="active"><a href="/">Inicio</a></li>
                     <li><a href="/producto">Productos</a></li>
 
                 </ul>
@@ -104,96 +95,46 @@
     </nav>
 </header>
 
-
-
-<div class="container" role="main">
-    <div class="row">
-        <div class="col col-md-10 col-md-offset-1">
-            <br>
-            <div class="row">
-                <div class="col col-md-2">
-                    <g:if test="${session.usuario && session.usuario.tipo in [TipoUsuario.CLIENTE_CONSUMIDOR_FINAL, TipoUsuario.CLIENTE_EMPRESA, TipoUsuario.CLIENTE_PERSONA_FISICA]}">
-                        <a href="/producto/catalogo">Ver lista</a>
-                    </g:if>
-                    <g:else>
-                        <a href="/producto/index" class="btn btn-primary btn-large">Ver lista</a>
-                    </g:else>
-                </div>
-
-                <g:if test="${session.usuario}">
-                    <g:if test="${session.usuario.tipo in [TipoUsuario.CLIENTE_CONSUMIDOR_FINAL, TipoUsuario.CLIENTE_EMPRESA, TipoUsuario.CLIENTE_PERSONA_FISICA]}">
-                        <div class="col col-md-6 col-md-offset-1">
-                            <div class="alert alert-warning">
-                                <form action="/carrito/agregar" method="post">
-                                    <input type="hidden" name="id_producto" value="${producto.id}" />
-                                    <g:field type="number" name="cantidad" min="1" />
-                                    &nbsp;
-                                    <button type="submit" name="crear" class="btn btn-success btn-large">
-                                        Agregar a carrito
-                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </g:if>
-                </g:if>
-            </div>
-            <div class="row">
-                <div class="jumbotron">
+    <div class="container" role="main">
+        <div class="row">
                     <div class="row">
-                        <div class="col col-md-7">
-                            <img class="thumbnail"
-                                 src="data:image/jpeg;base64,${producto.imagen?.encodeBase64()}"
-                                 style="width: 100%"
-                            />
-                        </div>
-                        <div class="col col-md-5">
-                            <h1>${producto.nombre}</h1>
-                            <p><b>${producto.descripcion}</b></p>
-                            <p>RD$ <span class="badge">${producto.precio}</span></p>
-                            <p>Quedan: <span class="badge">${producto.existencia}</span></p>
-                        </ul>
+                        <div class="jumbotron">
+                            <div class="row">
+                                <div class="col col-md-4" style="margin-right: 35px;">
+                                    <img class="thumbnail"
+                                         src="data:image/jpeg;base64,${producto.imagen?.encodeBase64()}"
+                                         style="width: 300px; background-color: #e9f0fd"
+                                    />
+                                </div>
+                                <g:if test="${session.usuario}">
+                                    <g:if test="${session.usuario.tipo in [TipoUsuario.CLIENTE_CONSUMIDOR_FINAL, TipoUsuario.CLIENTE_EMPRESA, TipoUsuario.CLIENTE_PERSONA_FISICA]}">
+                                        <div class="col col-md-6 col-md-offset-1">
+                                            <div>
+                                                <form action="/carrito/agregar" method="post">
+                                                    <h1 style="text-decoration: underline">${producto.nombre}</h1>
+                                                    <label>Cantidad:</label>
+                                                    <input type="hidden" name="id_producto" value="${producto.id}" />
+                                                    <g:field type="number" name="cantidad" min="1" max="${producto.existencia}"/>
+                                                    <br>
+                                                    <br>
+                                                    <p><b>RD$ ${producto.precio}</b></p>
+                                                    <br>
+                                                    <p>${producto.descripcion}</p>
+                                                    <br>
+                                                    <button type="submit" name="crear" class="btn btn-large" style="background-color: #1abc9c; color: white">
+                                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                        Agregar al carrito
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </g:if>
+                                </g:if>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
-</div>
 
-
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="center">Made with <i class="fa fa-heart"></i> by <a href="https://revolthemes.net/" target="_blank">Revolthemes</a>. All Rights Reserved</p>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" >&times;</button>
-                <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span>Mi Carro de Compras</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table table-hover table-responsive" id="carTable"></table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Facturar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- JQUERY -->
-<asset:javascript src="application.js"/>
 </body>
 </html>

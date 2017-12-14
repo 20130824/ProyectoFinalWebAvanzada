@@ -193,7 +193,7 @@
     <div class="container" role="main">
         <div class="row">
             <div class="col col-md-12">
-                <h1>Productos</h1>
+
                 <br>
                 <g:if test="${flash.message}">
                     <div class="alert alert-info" role="status">${flash.message}</div>
