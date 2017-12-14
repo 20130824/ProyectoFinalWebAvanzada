@@ -1,5 +1,11 @@
 package ProyectoFinalWeb
 
+
+import grails.rest.*
+
+
+
+@Resource(uri='/fact')
 class Factura {
     Boolean despachada;
     Date fecha;
