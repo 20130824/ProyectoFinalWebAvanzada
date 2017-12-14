@@ -119,10 +119,10 @@ class ReportingController {
             }
             sendMail {
                 multipart true
-                subject "Despacho"
-                text "Se debe enviar un pedido a la siguiente direccion:\n" + factura.direccion
+                subject "Envio pendiente para Despachar"
+                text "Envio pendiente para enviar A :\n" + factura.direccion
                 to enviar_a
-                from "saletasmarket@gmail.com"
+                from "tiendasomething@gmail.com"
                 attach "reporte_despacho.pdf", "application/pdf", pdfStream.toByteArray()
             }
             render(file: pdfStream.toByteArray(), contentType: 'application/pdf')

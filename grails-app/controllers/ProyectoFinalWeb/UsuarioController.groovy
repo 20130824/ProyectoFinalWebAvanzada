@@ -40,18 +40,18 @@ class UsuarioController {
         if(usuario.tipo in [TipoUsuario.CLIENTE_CONSUMIDOR_FINAL, TipoUsuario.CLIENTE_EMPRESA, TipoUsuario.CLIENTE_PERSONA_FISICA]) {
             String bodyText = ""
 
-            bodyText  = "Gracias por registrarte en Saleta's Store!\n\n"
-            bodyText += "Puedes entrar a la tienda en el enlace http://localhost:8080\n"
+            bodyText  = "Bienvenido a Tienda Something, la mejor tienda para comprar!!\n\n"
+            bodyText += "Puedes realizar tus compras entrando a http://localhost:8080 y loguearte con las siguientes credenciales:\n"
             bodyText += "\tUsuario: ${usuario.email}\n"
             bodyText += "\tPassword: ${usuario.password}\n\n"
-            bodyText += "Un saludo."
+            bodyText += "Gracias por preferirnos!!"
 
             sendMail {
                 multipart false
-                subject "Credenciales Saleta's Market"
+                subject "Bienvenido a Tienda Something!"
                 text bodyText
                 to usuario.email
-                from "saletasmarket@gmail.com"
+                from "tiendasomething@gmail.com"
             }
         }
 
