@@ -8,7 +8,7 @@
         <div class="container" role="main">
             <div class="row">
                 <div class="col col-md-12">
-                    <h1><i class="fa fa-cart-plus"></i> Productos en carrito</h1>
+                    <h1><i class="fa fa-cart-plus"></i> Productos en el carrito</h1>
                     <br>
                     <g:if test="${flash.message}">
                         <div class="alert alert-info" role="status">${flash.message}</div>
@@ -31,17 +31,37 @@
                             <br>
                         </div>
                     </g:if>
-                    <div class="row">
+
                         <g:each in="${productos}" var="prod">
-                            <div class="col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">
+
+                                    <h3>${prod["producto"].nombre}</h3>
+
                                     <img class="producto_thumbnail_img"
                                          src="data:image/jpeg;base64,${prod["producto"].imagen?.encodeBase64()}"
                                          alt="NO HAY IMAGEN... LO SIENTO"
                                          style="height: 100px"
                                     />
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span class="badge">${prod["cantidad"]}</span>
+                                            Cantidad:
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">RD$ ${prod["producto"].precio}</span>
+                                            Precio:
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">
+                                                ${prod["producto"].precio * prod["cantidad"]}
+                                            </span>
+                                            <b>A pagar:</b>
+                                        </li>
+                                    </ul>
                                     <div class="caption">
-                                        <h3>${prod["producto"].nombre}</h3>
+
                                         <p>
                                             <form action="/carrito/quitar" method="post">
                                                 <input type="hidden" name="id_producto" value="${prod["producto"].id}" />
@@ -51,27 +71,14 @@
                                             </form>
                                         </p>
                                         <p>&nbsp;</p>
-                                        <ul class="list-group">
-                                            <li class="list-group-item">
-                                                <span class="badge">${prod["cantidad"]}</span>
-                                                Cantidad:
-                                            </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">RD$ ${prod["producto"].precio}</span>
-                                                Precio:
-                                            </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">
-                                                    ${prod["producto"].precio * prod["cantidad"]}
-                                                </span>
-                                                <b>A pagar:</b>
-                                            </li>
-                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
+                            </div>
+
                         </g:each>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -105,7 +105,6 @@
 </header>
 
 
-
 <section class="slider-section">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -118,7 +117,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <g:img uri="images/slider.jpg" width="1648" height="600" alt=""/>
+                <g:img dir="images" file="slider.jpg" width="1648" height="600"/>
                 <div class="carousel-caption">
                     <h2>DRESSES <b>&</b> JEANS</h2>
                     <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>
@@ -126,7 +125,7 @@
                 </div>
             </div>
             <div class="item">
-                <g:img uri="images/slider.jpg" width="1648" height="600" alt=""/>
+                <g:img dir="images" file="slider.jpg" width="1648" height="600"/>
                 <div class="carousel-caption">
                     <h2>DRESSES <b>&</b> JEANS</h2>
                     <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>
@@ -134,7 +133,7 @@
                 </div>
             </div>
             <div class="item ">
-                <g:img uri="images/slider.jpg" width="1648" height="600" alt=""/>
+                <g:img dir="images" file="slider.jpg" width="1648" height="600"/>
                 <div class="carousel-caption">
                     <h2>DRESSES <b>&</b> JEANS</h2>
                     <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>
@@ -194,7 +193,7 @@
     <div class="container" role="main">
         <div class="row">
             <div class="col col-md-12">
-                <h1>Productos</h1>
+
                 <br>
                 <g:if test="${flash.message}">
                     <div class="alert alert-info" role="status">${flash.message}</div>
@@ -284,19 +283,19 @@
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Email">
+                                <input type="text" class="form-control" id="email1" placeholder="Your Email">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="name" placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="name" placeholder="Website URL">
+                                <input type="text" class="form-control" id="url" placeholder="Website URL">
                             </div>
                         </div>
                     </div>

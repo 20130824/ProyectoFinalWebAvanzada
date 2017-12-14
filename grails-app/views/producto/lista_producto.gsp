@@ -119,55 +119,44 @@
             <div class="row">
                 <g:each in="${productos}" var="prod">
                     <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img class="producto_thumbnail_img"
-                                 src="data:image/jpeg;base64,${prod.imagen?.encodeBase64()}"
-                                 alt="NO HAY IMAGEN... LO SIENTO"
-                                 style="height: 100px"
-                            />
-                            <div class="caption">
-                                <h3>${prod.nombre}</h3>
-                                <p>RD$ ${prod.precio}</p>
-                                <p>
-                                    <a href="/producto/detail/${prod.id}" class="btn btn-success" style="text-decoration: none">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
+                         <div class="product-item" style="width: 220px; background-color: #e9f0fd; height: 300px">
+                            <img src="data:image/jpeg;base64,${prod.imagen?.encodeBase64()}">
 
-                                    <g:if test="${accion == "crud"}">
-                                        <a href="/producto/edit/${prod.id}" class="btn btn-primary" style="text-decoration: none">
-                                            <i class="fa fa-pencil-square-o"></i>
-                                        </a>
-                                        <a href="/producto/remove/${prod.id}" onclick="return confirm('Seguro?')" class="btn btn-danger" style="text-decoration: none">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </g:if>
-                                  </p>
-                            </div>
-                        </div>
+                             <div class="product-hover">
+                                 <div class="product-meta">
+                                     <a href="/producto/detail/${prod.id}"><i class="pe-7s-cart"></i>Ver Producto</a>
+                                 </div>
+                             </div>
+                             <div class="product-title">
+                                 <a href="#">
+                                     <div class="row">
+                                         <h3>${prod.nombre}</h3>
+                                         <span>RD$ ${prod.precio}</span>
+                                     </div>
+                                     <div class="row">
+                                         <g:if test="${accion == "crud"}">
+                                             <a href="/producto/edit/${prod.id}" class="btn btn-primary" style="text-decoration: none">
+                                                 <i class="fa fa-pencil-square-o"></i>
+                                             </a>
+                                             <a href="/producto/remove/${prod.id}" onclick="return confirm('Seguro?')" class="btn btn-danger" style="text-decoration: none">
+                                                 <i class="fa fa-trash"></i>
+                                             </a>
+                                         </g:if>
+                                     </div>
+                                 </a>
+                             </div>
+
+                         </div>
                     </div>
                 </g:each>
             </div>
+
+
         </div>
     </div>
 </div>
 
 
-
-
-
-
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="center">Made with <i class="fa fa-heart"></i> by <a href="https://revolthemes.net/" target="_blank">Revolthemes</a>. All Rights Reserved</p>
-
-            </div>
-        </div>
-    </div>
-</footer>
 
 <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -191,3 +180,4 @@
 <asset:javascript src="application.js"/>
 </body>
 </html>
+
