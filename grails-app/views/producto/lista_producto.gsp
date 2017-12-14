@@ -30,6 +30,24 @@
                     <ul class="nav nav-pills navbar-left">
                         <li><a href="#"><i class="pe-7s-call"></i><span>123-123456789</span></a></li>
                         <li><a href="#"><i class="pe-7s-mail"></i><span> info@mart.com</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Usuario <span class="caret"></span>
+                            </a>
+                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                <li><a href="/usuario/create">Crear</a></li>
+                                <li><a href="/usuario/">Lista de Usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Producto <span class="caret"></span>
+                            </a>
+                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                <li><a href="/producto/create">Crear</a></li>
+                                <li><a href="/producto/">Lista de Productos</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -114,6 +132,15 @@
                                     <a href="/producto/detail/${prod.id}" class="btn btn-success" style="text-decoration: none">
                                         <i class="fa fa-eye"></i>
                                     </a>
+
+                                    <g:if test="${accion == "crud"}">
+                                        <a href="/producto/edit/${prod.id}" class="btn btn-primary" style="text-decoration: none">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </a>
+                                        <a href="/producto/remove/${prod.id}" onclick="return confirm('Seguro?')" class="btn btn-danger" style="text-decoration: none">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </g:if>
                                   </p>
                             </div>
                         </div>

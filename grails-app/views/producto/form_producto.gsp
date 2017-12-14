@@ -30,6 +30,24 @@
                     <ul class="nav nav-pills navbar-left">
                         <li><a href="#"><i class="pe-7s-call"></i><span>123-123456789</span></a></li>
                         <li><a href="#"><i class="pe-7s-mail"></i><span> info@mart.com</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Usuario <span class="caret"></span>
+                            </a>
+                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                <li><a href="/usuario/create">Crear</a></li>
+                                <li><a href="/usuario/">Lista de Usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Producto <span class="caret"></span>
+                            </a>
+                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                <li><a href="/producto/create">Crear</a></li>
+                                <li><a href="/producto/">Lista de Productos</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
