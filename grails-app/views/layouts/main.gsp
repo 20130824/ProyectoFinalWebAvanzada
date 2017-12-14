@@ -8,8 +8,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/webjars/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
     <asset:stylesheet src="application.css"/>
 
     <g:layoutHead/>
@@ -49,18 +48,12 @@
 
         <ul class="nav navbar-nav navbar-right">
             <g:if test="${!session.usuario}">
-                <li>
-                    <a href="/login/login">
-                        Iniciar sesion <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    </a>
-                </li>
+                <li><a href="/login/login"><i class="pe-7s-lock"  aria-hidden="true"></i>Iniciar Sesión</a></li>
+
             </g:if>
             <g:else>
-                <li>
-                    <a href="/login/logout">
-                        Cerrar sesion <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    </a>
-                </li>
+
+                <li><a href="/login/logout"><i class="pe-7s-lock"  aria-hidden="true"></i>Cerrar</a></li>
             </g:else>
         </ul>
     </div>

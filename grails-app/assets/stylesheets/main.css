@@ -174,7 +174,7 @@ img {
 }
 
 .nav li.dropdown.open ul.dropdown-menu {
-    background-color: #cccccc;
+    background-color: #4D8618;
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
@@ -565,7 +565,7 @@ a.skip {
     margin-bottom: 20px;
     color: white;
     height:300px;
-    text-align:center;"
+    text-align:center;
 }
 
 img.grails-logo {

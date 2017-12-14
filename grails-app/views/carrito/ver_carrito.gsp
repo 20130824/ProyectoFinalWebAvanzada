@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+
         <title>Carrito de Compra</title>
     </head>
     <body>

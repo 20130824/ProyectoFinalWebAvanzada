@@ -7,15 +7,21 @@
 //
 //= require jquery-2.2.0.min
 //= require bootstrap
-//= require_tree .
+//= require custom
+//= require isotope.pkgd
+//= require jquery.mycart
+//= require jquery.nicescroll
+//= require jquery.prettyPhoto
+//= require owl.carousel
+//= require wow
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
     (function($) {
-        $('#spinner').ajaxStart(function() {
-            $(this).fadeIn();
+        $(document).ajaxStart(function() {
+            $('#spinner').fadeIn();
         }).ajaxStop(function() {
-            $(this).fadeOut();
+            $('#spinner').fadeOut();
         });
     })(jQuery);
 }
