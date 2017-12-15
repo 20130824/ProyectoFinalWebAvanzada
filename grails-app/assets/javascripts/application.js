@@ -12,6 +12,7 @@
 //= require jquery.mycart
 //= require jquery.nicescroll
 //= require jquery.prettyPhoto
+//= require canvasjs.min
 //= require owl.carousel
 //= require wow
 //= require_self

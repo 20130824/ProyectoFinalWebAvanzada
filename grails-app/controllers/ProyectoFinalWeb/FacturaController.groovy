@@ -11,6 +11,21 @@ class FacturaController {
 
     }
 
+    def graficos(){
+
+        def facturas = Factura.findAll()
+
+        def despachadas = Factura.findAllByDespachada(true)
+        def noDespachadas =  Factura.findAllByDespachada(false)
+
+
+        println "despachadas: " + despachadas.size() + ". No despachadas: " + noDespachadas.size()
+        def mapa = ["despachadas": despachadas.size(), "noDespachadas": noDespachadas.size(), "comprasRealizadas": facturas.size() ]
+
+        def datos = ["datos" : mapa]
+        respond datos
+
+    }
     def service(){
         render Factura.list() as JSON
     }
