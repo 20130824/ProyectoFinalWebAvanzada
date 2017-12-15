@@ -5,7 +5,7 @@ import grails.rest.*
 
 
 
-@Resource(uri='/fact')
+@Resource(uri="/facturas",readOnly = false, formats = ["json", "xml"])
 class Factura {
     Boolean despachada;
     Date fecha;

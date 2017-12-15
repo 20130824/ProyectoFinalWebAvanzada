@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 <section class="header-top-section">
     <div class="container">
         <div class="row">
@@ -22,35 +21,57 @@
                     <ul class="nav nav-pills navbar-left">
                         <li><a href="#"><i class="pe-7s-call"></i><span>123-123456789</span></a></li>
                         <li><a href="#"><i class="pe-7s-mail"></i><span> info@mart.com</span></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Usuario <span class="caret"></span>
-                            </a>
-                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
-                                <li><a href="/usuario/create">Crear</a></li>
-                                <li><a href="/usuario/">Lista de Usuarios</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Producto <span class="caret"></span>
-                            </a>
-                            <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
-                                <li><a href="/producto/create">Crear</a></li>
-                                <li><a href="/producto/">Lista de Productos</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/"><i ></i><span>Inicio</span></a></li>
+
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.tipo in [TipoUsuario.ADMIN]}">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Usuario <span class="caret"></span>
+                                    </a>
+                                    <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                        <li><a href="/usuario/create">Crear</a></li>
+                                        <li><a href="/usuario/">Lista de Usuarios</a></li>
+                                    </ul>
+                                </li>
+
+                            </g:if>
+                        </g:if>
+
+
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.tipo in [TipoUsuario.ADMIN]}">
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Producto <span class="caret"></span>
+                                    </a>
+                                    <ul style="background-color: #1abc9c; padding-left: 3px" class="dropdown-menu">
+                                        <li><a href="/producto/create">Crear</a></li>
+                                        <li><a href="/producto/">Lista de Productos</a></li>
+                                    </ul>
+                                </li>
+                            </g:if>
+                        </g:if>
+
                     </ul>
                 </div>
             </div>
             <div  class="col-md-6">
                 <div class="header-top-menu">
                     <ul class="nav nav-pills navbar-right">
-                        <li>
-                            <a href="/factura/ver_despachar">
-                                <i class="fa fa-truck"></i> Despacho
-                            </a>
-                        </li>
+
+                        <g:if test="${session.usuario}">
+                            <g:if test="${session.usuario.tipo in [TipoUsuario.ADMIN, TipoUsuario.ALMACEN]}">
+
+                                <li>
+                                    <a href="/factura/ver_despachar">
+                                        <i class="fa fa-truck"></i> Despacho
+                                    </a>
+                                </li>
+
+                            </g:if>
+                        </g:if>
                         <g:if test="${!session.usuario}">
                             <li><a href="/login/login"><i class="pe-7s-lock"  aria-hidden="true"></i>Iniciar Sesión</a></li>
 
@@ -83,7 +104,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Inicio</a></li>
+                    <li class="active"><a href="#">Inicio</a></li>
                     <li><a href="/producto">Productos</a></li>
 
                 </ul>
@@ -94,6 +115,7 @@
         </div><!-- /.container -->
     </nav>
 </header>
+
 
     <div class="container" role="main">
         <div class="row">

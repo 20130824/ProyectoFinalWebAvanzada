@@ -1,5 +1,7 @@
 package ProyectoFinalWeb
 
+import grails.converters.JSON
+
 class FacturaController {
 
     def index() { }
@@ -7,6 +9,10 @@ class FacturaController {
 
     def ver_despachar(){
 
+    }
+
+    def service(){
+        render Factura.list() as JSON
     }
 
     def despachar(){
